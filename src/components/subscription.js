@@ -45,9 +45,10 @@ const Subscription = () => {
     <Wrapper>
       <form
         name="contact"
-        method="POST"
+        method="post"
+        action="/success"
         data-netlify="true"
-        data-netlify-recaptcha="true"
+        data-netlify-honeypot="bot-field"
       >
         <label>Subscríbete a nuestro newsletter</label>
         <input placeholder="Entra tu email" type="email" name="email" />
