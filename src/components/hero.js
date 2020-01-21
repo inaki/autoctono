@@ -1,21 +1,12 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react";
-import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 import styled from "@emotion/styled";
-import BgImg from "../images/joshua-earle.jpg";
 import Logo from "../images/logo-white.png";
+import BackgroundImage from "gatsby-background-image";
 
 const getImageRelPath = () => {};
 
-const ImageBackground = styled("div")`
-  background-image: url(${BgImg});
+const ImageBackground = styled(BackgroundImage)`
   background-position: top 20% center;
   background-size: cover;
   background-color: rgba(0, 25, 55, 0.73);
@@ -49,8 +40,20 @@ const LogoImage = styled("img")`
 `;
 
 const Hero = ({ children }) => {
+  const { image } = useStaticQuery(graphql`
+    query {
+      image: file(relativePath: { eq: "joshua-earle.jpg" }) {
+        sharp: childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `);
+
   return (
-    <ImageBackground>
+    <ImageBackground Tag="section" fluid={image.sharp.fluid} fadeIn="soft">
       <TextBox>
         <LogoImage src={Logo} alt="logo" />
         <h1>Autóctono</h1>
