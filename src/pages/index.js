@@ -27,7 +27,6 @@ const IndexPage = () => (
         title="Transparencia Extrema: Nuevos Valores"
         content="Creemos en la transparencia extrema, para que siempre conozcas nuestros avances, nuestros recursos y nuestras necesidades. Somos una organización descentralizada, de tal forma que todos podamos lograr nuestras metas, en equipo y de manera organizada y eficiente. Nuestra plataforma es colaborativa, en la cual podremos canalizar la ayuda de cualquier individuo u organización en el momento y en lugar que se requiera."
       />
-      <Link to="/page-2/">Go to page 2</Link>
     </Layout>
   </>
 );
