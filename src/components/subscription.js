@@ -40,10 +40,16 @@ const Wrapper = Styled("div")`
     }
 `;
 
-const Subscription = ({ value, onSubmit }) => {
+const Subscription = () => {
   return (
     <Wrapper>
-      <form name="contact" method="POST" data-netlify="true">
+      <form
+        name="contact"
+        method="post"
+        action="/success"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
         <label>Subscríbete a nuestro newsletter</label>
         <input placeholder="Entra tu email" type="email" name="email" />
         <button type="submit">Subscríbete</button>
